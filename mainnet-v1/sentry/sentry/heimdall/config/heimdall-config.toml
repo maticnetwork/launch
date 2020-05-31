@@ -4,7 +4,7 @@
 ##### RPC and REST configs #####
 
 # RPC endpoint for ethereum chain
-eth_rpc_url = "https://goerli.infura.io/v3/<YOUR_INFURA_KEY>"
+eth_rpc_url = "https://mainnet.infura.io/v3/<YOUR_INFURA_KEY>"
 
 # RPC endpoint for bor chain
 bor_rpc_url = "http://localhost:8545"
