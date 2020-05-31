@@ -2,5 +2,4 @@
 
 BOR_DIR=${BOR_DIR:-~/.bor}
 
-bash ./stop.sh
-rm -rf $BOR_DIR/dataDir $BOR_DIR/logs
+rm -rf $BOR_DIR
