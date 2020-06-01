@@ -31,6 +31,7 @@ bor --datadir $DATA_DIR \
   --keystore $BOR_DIR/keystore \
   --unlock $ADDRESS \
   --password $BOR_DIR/password.txt \
+  --allow-insecure-unlock \
   --maxpeers 200 \
   --metrics \
   --pprof --pprofport 7071 --pprofaddr '0.0.0.0' \
