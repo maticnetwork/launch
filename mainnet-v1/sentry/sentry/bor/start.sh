@@ -13,6 +13,7 @@ bor --datadir $DATA_DIR \
   --rpcport 8545 \
   --ipcpath $DATA_DIR/bor.ipc \
   --rpcapi 'db,eth,net,web3,txpool,bor' \
+  --syncmode 'full' \
   --networkid '137' \
   --miner.gaslimit '200000000' \
   --miner.gastarget '20000000' \
