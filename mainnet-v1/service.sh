@@ -49,13 +49,3 @@ cat > heimdalld-bridge.service <<EOF
   User=$USER
 EOF
 
-cat > bootnode.service <<EOF
-[Unit]
-  Description=bootnode
-
-[Service]
-  WorkingDirectory=$NODE_DIR
-  ExecStart=$BIN_DIR/bootnode --nodekey $HOME/bootnode.key --addr :30303
-  Type=simple
-  User=$USER
-EOF
