@@ -1,23 +1,12 @@
 # Matic Mainnet
 ## The Matic mainnet launch
 
-The Matic Foundation is releasing the genesis information for the Matic mainnet along with associated Release softwre.
+The Matic Foundation is releasing the genesis information for the Matic mainnet along with associated Release software.
 
 Please be aware that there is no guarantee a network will start from this recommendation - nodes and validators may never come online, the community may disregard the recommendation and choose different genesis files, and/or they may modify the software in arbitrary ways. Such outcomes and many more are outside the Matic Foundation's control and completely in the hands of the community.
 
 The recommended genesis file is `genesis.json`. It has the following SHA256 hash:
 
-$ shasum -a 256 bor/genesis.json 
-808755d2738f8170d5673f6a5955687c76e472b31346b61f9e6f8e49244b9854  bor/genesis.json
-
-$ shasum -a 256 heimdall/config/genesis.json
-498669113c72864002c101f65cd30b9d6b159ea2ed4de24169f1c6de5bcccf14  heimdall/config/genesis.json
-
-$ b2sum bor/genesis.json 
-0c0838db3f0f5d9645f25420b67c478be1bf6c5461c8c08f5999ded2132c0e305531a7494e09f6d1a7be37eaefcd52b267087544916da6f31801b3bfed39c583  bor/genesis.json
-
-$ b2sum heimdall/config/genesis.json
-cb980d1a9e94499200181a33860358110c9fe2901090d4415e7244e1c10a8085b6abe68ade9cb9532052b65a445cf031925d4c84f54f0c44d998a94d423208d7  heimdall/config/genesis.json
 
 It includes a genesis time of 2020-05-30T04:28:03.177054Z. 
 
