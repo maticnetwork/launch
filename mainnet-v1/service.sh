@@ -14,6 +14,9 @@ cat > bor.service <<EOF
   ExecStart=/bin/bash $NODE_DIR/bor/start.sh $1
   Type=simple
   User=$USER
+
+[Install]
+  WantedBy=multi-user.target
 EOF
 
 cat > heimdalld.service <<EOF
@@ -25,6 +28,9 @@ cat > heimdalld.service <<EOF
   ExecStart=$BIN_DIR/heimdalld start
   Type=simple
   User=$USER
+
+[Install]
+  WantedBy=multi-user.target
 EOF
 
 cat > heimdalld-rest-server.service <<EOF
@@ -36,6 +42,9 @@ cat > heimdalld-rest-server.service <<EOF
   ExecStart=$BIN_DIR/heimdalld rest-server
   Type=simple
   User=$USER
+
+[Install]
+  WantedBy=multi-user.target
 EOF
 
 cat > heimdalld-bridge.service <<EOF
@@ -47,5 +56,8 @@ cat > heimdalld-bridge.service <<EOF
   ExecStart=$BIN_DIR/bridge start --all
   Type=simple
   User=$USER
+
+[Install]
+  WantedBy=multi-user.target
 EOF
 
