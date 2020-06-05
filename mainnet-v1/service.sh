@@ -10,8 +10,9 @@ cat > bor.service <<EOF
 
 [Service]
   WorkingDirectory=$NODE_DIR
+  EnvironmentFile=/etc/matic/metadata
   ExecStartPre=/bin/chmod +x $NODE_DIR/bor/start.sh
-  ExecStart=/bin/bash $NODE_DIR/bor/start.sh $1
+  ExecStart=/bin/bash $NODE_DIR/bor/start.sh ${VALIDATOR_ADDRESS}
   Type=simple
   User=$USER
 
