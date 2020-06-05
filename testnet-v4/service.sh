@@ -4,6 +4,9 @@ NODE_DIR=${NODE_DIR:-$HOME/node}
 BIN_DIR=$(go env GOPATH)/bin
 USER=$(whoami)
 
+
+VALIDATOR_ADDRESS='${VALIDATOR_ADDRESS}'
+
 cat > bor.service <<EOF
 [Unit]
   Description=bor
@@ -12,7 +15,7 @@ cat > bor.service <<EOF
   WorkingDirectory=$NODE_DIR
   EnvironmentFile=/etc/matic/metadata
   ExecStartPre=/bin/chmod +x $NODE_DIR/bor/start.sh
-  ExecStart=/bin/bash $NODE_DIR/bor/start.sh ${VALIDATOR_ADDRESS}
+  ExecStart=/bin/bash $NODE_DIR/bor/start.sh $VALIDATOR_ADDRESS
   Type=simple
   User=$USER
 
