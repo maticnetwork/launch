@@ -7,6 +7,10 @@ USER=$(whoami)
 
 VALIDATOR_ADDRESS='${VALIDATOR_ADDRESS}'
 
+cat > metadata <<EOF
+VALIDATOR_ADDRESS=
+EOF
+
 cat > bor.service <<EOF
 [Unit]
   Description=bor
