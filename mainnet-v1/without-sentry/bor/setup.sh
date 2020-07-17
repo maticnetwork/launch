@@ -16,7 +16,7 @@ bor --datadir $DATA_DIR init ./genesis.json
 cp ./static-nodes.json $DATA_DIR/bor/static-nodes.json
 
 # if node key not present, create nodekey
-if test -f $NODE_KEY; then
+if [ ! -f $NODE_KEY ]; then
   bootnode -genkey $NODE_KEY
 fi
 
