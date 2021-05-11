@@ -11,6 +11,7 @@
     "petersburgBlock": 0,
     "istanbulBlock": 2722000,
     "muirGlacierBlock": 2722000,
+    "berlinBlock": 13830000,
     "bor": {
       "period": 2,
       "producerDelay": 6,
