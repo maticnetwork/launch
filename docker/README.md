@@ -2,7 +2,7 @@ This readme is for setting up full nodes for mumbai/mainnet node for matic netwo
 
 Enter the value for `NODE_NAME` in env files for identification of your node in dashboards for mumbai network(https://bor-mumbai.vitwit.com/) and mainnet network(https://bor-mainnet.vitwit.com/)
 
-Download the latest snapshot
+Download the latest snapshot for mainnet
 ```
 mkdir ~/bor
 mkdir ~/bor/snapshot
@@ -12,6 +12,21 @@ mkdir ~/heimdall
 mkdir ~/heimdall/snapshot
 cd ~/heimdall/snapshot
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-fullnode-snapshot-2021-06-16.tar.gz
+```
+
+Download the latest snapshot for mumbai
+```
+mkdir ~/bor
+mkdir ~/bor/snapshot
+cd ~/bor/snapshot
+wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/bor-fullnode-snapshot-2021-06-16.tar.gz
+mkdir ~/heimdall
+mkdir ~/heimdall/snapshot
+cd ~/heimdall/snapshot
+wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-fullnode-snapshot-2021-06-16.tar.gz
+```
+
+PS - If you are using different snapshot files, make changes accordingly in the env files
 
 Recommended docker-compose version
 ```
