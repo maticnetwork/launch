@@ -26,9 +26,9 @@ OpenSSL version: OpenSSL 1.1.1h  22 Sep 2020
 
 Run the following commands for local volumes to be mounted in docker-compose file
 ```
-mkdir -P heimdall/snapshot
-mkdir -P heimdall/scripts
-mkdir -P bor/snapshot
+mkdir -p heimdall/snapshot
+mkdir -p heimdall/scripts
+mkdir -p bor/snapshot
 mv <path-to-heimdall-snapshot-file> heimdall/snapshot
 mv <path-to-bor-snapshot-file> bor/snapshot
 mv heimdall-startup.sh heimdall/scripts
