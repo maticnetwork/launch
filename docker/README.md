@@ -25,7 +25,7 @@ OpenSSL version: OpenSSL 1.1.1h  22 Sep 2020
 ```
 
 NOTE: Start bor service only when heimdall is fully synced
-NOTE: Replace the host volumes in docker-compose file accordingly
+NOTE: Replace the host volumes in docker-compose file accordingly with snapshots and scripts
 
 For setting up full node using snapshots:
 ```

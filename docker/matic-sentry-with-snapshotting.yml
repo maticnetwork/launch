@@ -26,6 +26,7 @@ services:
       - devnet-network
     volumes:
       - ./heimdall/scripts:/root/scripts
+      - ./heimdall/snapshot/:/root/snapshot
       - ./heimdall/logs/:/root/logs/
       - ./heimdall/heimdalld/:/root/.heimdalld
     ports:
