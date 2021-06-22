@@ -19,14 +19,14 @@ services:
         && sed -i '/seeds =/c\seeds = \"${HEIMDALL_SEEDS}\"' /root/.heimdalld/config/config.toml \
         && sed -i '/bor_rpc_url/c\bor_rpc_url = \"${HEIMDALL_BOR_RPC_URL}\"' /root/.heimdalld/config/heimdall-config.toml \
         && sed -i '/eth_rpc_url/c\eth_rpc_url = \"${HEIMDALL_ETH_RPC_URL}\"' /root/.heimdalld/config/heimdall-config.toml \
-        && heimdalld rest-server start \& \
-        && heimdalld start
+        && cd /root/scripts && ./heimdall-startup.sh && sleep infinity
       "
     container_name: heimdall0
     networks:
       - devnet-network
     volumes:
-      - ./heimdall/snapshot/:/root/snapshot
+      - ./heimdall/scripts:/root/scripts
+      - ./heimdall/logs/:/root/logs/
       - ./heimdall/heimdalld/:/root/.heimdalld
     ports:
       - "1317:1317"

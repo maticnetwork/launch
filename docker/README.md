@@ -4,25 +4,13 @@ Enter the value for `NODE_NAME` in env files for identification of your node in 
 
 Download the latest snapshot for mainnet
 ```
-mkdir ~/bor
-mkdir ~/bor/snapshot
-cd ~/bor/snapshot
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/bor-fullnode-snapshot-2021-06-16.tar.gz
-mkdir ~/heimdall
-mkdir ~/heimdall/snapshot
-cd ~/heimdall/snapshot
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-fullnode-snapshot-2021-06-16.tar.gz
 ```
 
 Download the latest snapshot for mumbai
 ```
-mkdir ~/bor
-mkdir ~/bor/snapshot
-cd ~/bor/snapshot
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/bor-snapshot-2021-03-19.tar.gz
-mkdir ~/heimdall
-mkdir ~/heimdall/snapshot
-cd ~/heimdall/snapshot
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/heimdall-snapshot-2021-03-19.tar.gz
 ```
 
@@ -35,6 +23,9 @@ docker-py version: 5.0.0
 CPython version: 3.9.0
 OpenSSL version: OpenSSL 1.1.1h  22 Sep 2020
 ```
+
+NOTE: Start bor service only when heimdall is fully synced
+NOTE: Replace the host volumes in docker-compose file accordingly
 
 For setting up full node using snapshots:
 ```
