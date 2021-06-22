@@ -18,7 +18,7 @@ services:
         && sed -i '/seeds =/c\seeds = \"${HEIMDALL_SEEDS}\"' /root/.heimdalld/config/config.toml \
         && sed -i '/bor_rpc_url/c\bor_rpc_url = \"${HEIMDALL_BOR_RPC_URL}\"' /root/.heimdalld/config/heimdall-config.toml \
         && sed -i '/eth_rpc_url/c\eth_rpc_url = \"${HEIMDALL_ETH_RPC_URL}\"' /root/.heimdalld/config/heimdall-config.toml \
-        && heimdalld rest-server start & \
+        && heimdalld rest-server start \& \
         && heimdalld start
       "
     container_name: heimdall0
@@ -32,7 +32,7 @@ services:
       - "26656:26656"
     
   bor0:
-    image: "maticnetwork/bor:{BOR_TAG}"
+    image: "maticnetwork/bor:${BOR_TAG}"
     container_name: bor0
     command: >
       sh -c "

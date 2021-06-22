@@ -19,11 +19,11 @@ Download the latest snapshot for mumbai
 mkdir ~/bor
 mkdir ~/bor/snapshot
 cd ~/bor/snapshot
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/bor-fullnode-snapshot-2021-06-16.tar.gz
+wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/bor-snapshot-2021-03-19.tar.gz
 mkdir ~/heimdall
 mkdir ~/heimdall/snapshot
 cd ~/heimdall/snapshot
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-fullnode-snapshot-2021-06-16.tar.gz
+wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/heimdall-snapshot-2021-03-19.tar.gz
 ```
 
 PS - If you are using different snapshot files, make changes accordingly in the env files
@@ -36,24 +36,19 @@ CPython version: 3.9.0
 OpenSSL version: OpenSSL 1.1.1h  22 Sep 2020
 ```
 
-For setting up mumbai full node:
+For setting up full node using snapshots:
 ```
-docker-compose -f matic-sentry-with-snapshotting.yml --env-file mumbai.env up
+docker-compose -f matic-sentry-with-snapshotting.yml --env-file <env-file> up
 ```
 
-For setting up mainnet full node:
+For setting up full node without using snapshots:
 ```
-docker-compose -f matic-sentry-with-snapshotting.yml --env-file mainnet.env up
+docker-compose -f matic-sentry-without-snapshotting.yml --env-file <env-file> up
 ```
 
 If your docker-compose doesn't support `--env-file` flag, then copy mumbai.env/mainnet.env to `.env` and run the following command
 
-For setting up mumbai full node:
-```
-docker-compose -f matic-sentry-with-snapshotting.yml up
-```
-
-For setting up mainnet full node:
+For setting up full node:
 ```
 docker-compose -f matic-sentry-with-snapshotting.yml up
 ```
