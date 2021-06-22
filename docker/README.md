@@ -32,11 +32,6 @@ For setting up full node using snapshots:
 docker-compose -f matic-sentry-with-snapshotting.yml --env-file <env-file> up
 ```
 
-For setting up full node without using snapshots:
-```
-docker-compose -f matic-sentry-without-snapshotting.yml --env-file <env-file> up
-```
-
 If your docker-compose doesn't support `--env-file` flag, then copy mumbai.env/mainnet.env to `.env` and run the following command
 
 For setting up full node:

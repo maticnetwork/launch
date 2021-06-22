@@ -13,8 +13,10 @@ services:
     image: "maticnetwork/heimdall:${HEIMDALL_TAG}"
     command: >
       bash -c "
-        heimdalld init --home /root/.heimdalld --chain-id ${HEIMDALL_CHAIN_ID} \
-        && tar -xzvf /root/snapshot/${HEIMDALL_SNAPSHOT_FILE} -C /root/.heimdalld/data/ \
+        if [ ! -f \"/root/.heimdalld/config/config.toml\" ]
+        then
+          heimdalld init --home /root/.heimdalld --chain-id ${HEIMDALL_CHAIN_ID} && tar -xzvf /root/snapshot/${HEIMDALL_SNAPSHOT_FILE} -C /root/.heimdalld/data/
+        fi \
         && wget -O /root/.heimdalld/config/genesis.json ${HEIMDALL_GENESIS_URL} -P /root/.heimdalld/config \
         && sed -i '/seeds =/c\seeds = \"${HEIMDALL_SEEDS}\"' /root/.heimdalld/config/config.toml \
         && sed -i '/bor_rpc_url/c\bor_rpc_url = \"${HEIMDALL_BOR_RPC_URL}\"' /root/.heimdalld/config/heimdall-config.toml \
@@ -41,14 +43,17 @@ services:
       sh -c "
         cd /root \
         && wget -O setup.sh ${BOR_SETUP} \
-        && wget -O start.sh ${BOR_START} \
         && wget -O genesis.json ${BOR_GENESIS} \
         && wget -O static-nodes.json ${BOR_STATIC_FILE} \
+        && sh setup.sh \
+        && if [ ! -f \"start.sh\" ]
+        then
+          tar -xzvf /root/snapshot/${BOR_SNAPSHOT_FILE} -C /root/.bor/data/bor/chaindata
+        fi \
+        && wget -O start.sh ${BOR_START} \
         && sed -i '/datadir/ a --bootnodes \"${BOR_BOOTNODES}\" \\\' start.sh \
         && sed -i '/datadir/ a --bor.heimdall http://heimdall0:1317 \\\' start.sh \
         && sed -i '/datadir/ a --ethstats ${NODE_NAME}:${ETHSTATS_URL} \\\' start.sh \
-        && sh setup.sh \
-        && tar -xzvf /root/snapshot/${BOR_SNAPSHOT_FILE} -C /root/.bor/data/bor/chaindata \
         && sh start.sh
       "
     networks:
