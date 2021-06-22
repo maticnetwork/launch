@@ -38,3 +38,8 @@ For setting up full node:
 ```
 docker-compose -f matic-sentry-with-snapshotting.yml up
 ```
+
+For checking the status of heimdall use the following api
+```
+http://localhost:26657/status
+```
