@@ -14,7 +14,7 @@ wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/bor-sna
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/heimdall-snapshot-2021-03-19.tar.gz
 ```
 
-PS - If you are using different snapshot files, make changes accordingly in the env files
+PS - If you are using different snapshot files, make changes for file names accordingly in the env files
 
 Recommended docker-compose version
 ```
@@ -24,10 +24,17 @@ CPython version: 3.9.0
 OpenSSL version: OpenSSL 1.1.1h  22 Sep 2020
 ```
 
-NOTE: Start bor service only when heimdall is fully synced
-NOTE: Replace the host volumes in docker-compose file accordingly with snapshots and scripts
+Run the following commands for local volumes to be mounted in docker-compose file
+```
+mkdir -P heimdall/snapshot
+mkdir -P heimdall/scripts
+mkdir -P bor/snapshot
+mv <path-to-heimdall-snapshot-file> heimdall/snapshot
+mv <path-to-bor-snapshot-file> bor/snapshot
+mv heimdall-startup.sh heimdall/scripts
+```
 
-For setting up full node using snapshots:
+For setting up full node:
 ```
 docker-compose -f matic-sentry-with-snapshotting.yml --env-file <env-file> up
 ```
