@@ -54,7 +54,6 @@ services:
         && wget -O start.sh ${BOR_START} \
         && sed -i '/datadir/ a --bootnodes \"${BOR_BOOTNODES}\" \\\' start.sh \
         && sed -i '/datadir/ a --bor.heimdall http://heimdall0:1317 \\\' start.sh \
-        && sed -i '/datadir/ a --ethstats ${NODE_NAME}:${ETHSTATS_URL} \\\' start.sh \
         && sh start.sh
       "
     networks:
