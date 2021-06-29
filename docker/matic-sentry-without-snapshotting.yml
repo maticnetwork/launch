@@ -13,16 +13,7 @@ services:
     image: "maticnetwork/heimdall:${HEIMDALL_TAG}"
     command: >
       bash -c "
-        if [ ! -f \"/root/.heimdalld/config/config.toml\" ]
-        then
-          heimdalld init --home /root/.heimdalld --chain-id ${HEIMDALL_CHAIN_ID} \
-          && if [ ${BOR_MODE} == \"archive\" ]
-          then
-            tar -xzvf /root/snapshot/${HEIMDALL_ARCHIVE_NODE_SNAPSHOT_FILE} -C /root/.heimdalld/data/
-          else
-            tar -xzvf /root/snapshot/${HEIMDALL_FULL_NODE_SNAPSHOT_FILE} -C /root/.heimdalld/data/
-          fi
-        fi \
+        heimdalld init --home /root/.heimdalld --chain-id ${HEIMDALL_CHAIN_ID} \
         && wget -O /root/.heimdalld/config/genesis.json ${HEIMDALL_GENESIS_URL} -P /root/.heimdalld/config \
         && sed -i '/seeds =/c\seeds = \"${HEIMDALL_SEEDS}\"' /root/.heimdalld/config/config.toml \
         && sed -i '/26657/c\laddr = \"tcp://0.0.0.0:26657\"' /root/.heimdalld/config/config.toml \
@@ -35,7 +26,6 @@ services:
       - devnet-network
     volumes:
       - ./heimdall/scripts:/root/scripts
-      - ./heimdall/snapshot/:/root/snapshot
       - ./heimdall/logs/:/root/logs/
       - ./heimdall/heimdalld/:/root/.heimdalld
     ports:
@@ -53,29 +43,19 @@ services:
         && wget -O genesis.json ${BOR_GENESIS} \
         && wget -O static-nodes.json ${BOR_STATIC_FILE} \
         && sh setup.sh \
-        && if [ ! -f \"start.sh\" ]
-        then
-          if [ ${BOR_MODE} == \"archive\" ]
-          then
-            tar -xzvf /root/snapshot/${BOR_ARCHIVE_NODE_SNAPSHOT_FILE} -C /root/.bor/data/bor/chaindata
-          else
-            tar -xzvf /root/snapshot/${BOR_FULL_NODE_SNAPSHOT_FILE} -C /root/.bor/data/bor/chaindata
-          fi
-        fi \
         && wget -O start.sh ${BOR_START} \
+        && if [ \"${BOR_MODE}\" == \"archive\" ]
+          then
+            sed -i '/datadir/ a --gcmode \"archive\" \\\' start.sh && sed -i '/datadir/ a --ws --ws.port 8546 --ws.addr 0.0.0.0 --ws.origins \"*\" \\\' start.sh 
+          fi \
         && sed -i '/datadir/ a --bootnodes \"${BOR_BOOTNODES}\" \\\' start.sh \
         && sed -i '/datadir/ a --bor.heimdall http://heimdall0:1317 \\\' start.sh \
-        && if [ ${BOR_MODE} == \"archive\" ]
-          then
-            sed -i '/datadir/ a --gcmode \"archive\" \\\' start.sh && sed -i '/datadir/ a --ws --ws.port 8546 --ws.addr 0.0.0.0 --ws.origins \"*\" \\\' start.sh
-          fi \
         && sh start.sh
       "
     networks:
       devnet-network:
           ipv4_address: 172.20.1.100
     volumes:
-      - ./bor/snapshot/:/root/snapshot
       - ./bor/data:/root/.bor
     ports:
       - "8545:8545"

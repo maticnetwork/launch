@@ -1,18 +1,26 @@
 This readme is for setting up full nodes for mumbai/mainnet node for matic network using docker-compose
 
-Download the latest snapshot for mainnet. We periodically take new snapshots and will publish new links.
+Download the latest snapshot for mainnet full node. We periodically take new snapshots and will publish new links.
 ```
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/bor-fullnode-snapshot-2021-06-16.tar.gz
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-fullnode-snapshot-2021-06-16.tar.gz
 ```
 
-Download the latest snapshot for mumbai
+Download the latest snapshot for mumbai full node
 ```
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/bor-snapshot-2021-03-19.tar.gz
 wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/heimdall-snapshot-2021-03-19.tar.gz
 ```
 
+Download the latest snapshot for mainnet archive node. We periodically take new snapshots and will publish new links.
+```
+wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/bor-archive-node-snapshot-2021-06-17.tar.gz
+wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-archive-node-snapshot-2021-06-17.tar.gz
+```
+
 Note - If you are using different snapshot files, make changes for file names accordingly in the env files. We periodically take new snapshots and will publish new links.
+
+By default, archive mode is enabled in .env files. To start full node, set BOR_MODE=full
 
 Recommended docker-compose version
 ```
@@ -32,14 +40,14 @@ mv <path-to-bor-snapshot-file> bor/snapshot
 mv heimdall-startup.sh heimdall/scripts
 ```
 
-For setting up full node:
+For setting up nodes:
 ```
 docker-compose -f matic-sentry-with-snapshotting.yml --env-file <env-file> up
 ```
 
 If your docker-compose doesn't support `--env-file` flag, then copy mumbai.env/mainnet.env to `.env` and run the following command
 
-For setting up full node:
+For setting up nodes:
 ```
 docker-compose -f matic-sentry-with-snapshotting.yml up
 ```
