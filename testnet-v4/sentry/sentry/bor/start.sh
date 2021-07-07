@@ -18,9 +18,11 @@ bor --datadir $DATA_DIR \
   --miner.gaslimit '20000000' \
   --miner.gastarget '20000000' \
   --txpool.nolocals \
-  --txpool.accountslots '128' \
-  --txpool.globalslots '20000'  \
-  --txpool.lifetime '0h16m0s' \
+  --txpool.accountslots 16 \
+  --txpool.globalslots 131072 \
+  --txpool.accountqueue 64 \
+  --txpool.globalqueue 131072 \
+  --txpool.lifetime '1h30m0s' \
   --maxpeers 200 \
   --metrics \
   --pprof --pprof.port 7071 --pprof.addr '0.0.0.0'
