@@ -25,9 +25,11 @@ bor --datadir $DATA_DIR \
   --miner.gaslimit '20000000' \
   --miner.gastarget '20000000' \
   --txpool.nolocals \
-  --txpool.accountslots '128' \
-  --txpool.globalslots '20000'  \
-  --txpool.lifetime '0h16m0s' \
+  --txpool.accountslots 16 \
+  --txpool.globalslots 131072 \
+  --txpool.accountqueue 64 \
+  --txpool.globalqueue 131072 \
+  --txpool.lifetime '1h30m0s' \
   --keystore $BOR_DIR/keystore \
   --unlock $ADDRESS \
   --password $BOR_DIR/password.txt \
