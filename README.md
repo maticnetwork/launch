@@ -38,5 +38,10 @@ We request known community members who wish to run public p2p seed nodes make pu
 ```
 Seed nodes
 
+#Heimdall mainnet
+f95246805cc66b9e1429dd391d9fc3042a80d4b1@18.117.83.249:26656
+
+#Bor mainnet
+NEED
 
 ```
