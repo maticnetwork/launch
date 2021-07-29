@@ -14,14 +14,20 @@ EOF
 cat > bor.service <<EOF
 [Unit]
   Description=bor
+  StartLimitIntervalSec=500
+  StartLimitBurst=5
 
 [Service]
+  Restart=on-failure
+  RestartSec=5s
   WorkingDirectory=$NODE_DIR
   EnvironmentFile=/etc/matic/metadata
   ExecStartPre=/bin/chmod +x $NODE_DIR/bor/start.sh
   ExecStart=/bin/bash $NODE_DIR/bor/start.sh $VALIDATOR_ADDRESS
   Type=simple
   User=$USER
+  KillSignal=SIGINT
+  TimeoutStopSec=120
 
 [Install]
   WantedBy=multi-user.target
