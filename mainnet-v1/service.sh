@@ -26,6 +26,8 @@ cat > bor.service <<EOF
   ExecStart=/bin/bash $NODE_DIR/bor/start.sh $VALIDATOR_ADDRESS
   Type=simple
   User=$USER
+  KillSignal=SIGINT
+  TimeoutStopSec=120
 
 [Install]
   WantedBy=multi-user.target
