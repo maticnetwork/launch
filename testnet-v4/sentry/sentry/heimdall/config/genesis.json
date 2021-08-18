@@ -103,7 +103,8 @@
       "params": {
         "sprint_duration": "64",
         "span_duration": "6400",
-        "producer_count": "11"
+        "producer_count": "11",
+        "new_selection_algo_height": "282500"
       },
       "spans": [
         {
