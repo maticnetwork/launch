@@ -10,13 +10,13 @@ The recommended genesis file is `genesis.json`. It has the following SHA256 hash
 
 ```
 $ shasum -a 256 bor/genesis.json 
-808755d2738f8170d5673f6a5955687c76e472b31346b61f9e6f8e49244b9854  bor/genesis.json
+649b14f771de13efe219d05631053894b1879d3368a9a8dca7ecee158e0edb6a  bor/genesis.json
 
 $ shasum -a 256 heimdall/config/genesis.json
 498669113c72864002c101f65cd30b9d6b159ea2ed4de24169f1c6de5bcccf14  heimdall/config/genesis.json
 
 $ b2sum bor/genesis.json 
-0c0838db3f0f5d9645f25420b67c478be1bf6c5461c8c08f5999ded2132c0e305531a7494e09f6d1a7be37eaefcd52b267087544916da6f31801b3bfed39c583  bor/genesis.json
+9d732ac5f249ce24d1f4bd7e7995217a6d6876656ad1a9180df03c423b96bd8dc43c5af42233cf65bdfece6b5c9ae681212a3e6f22c415c83638705a50703dfb  bor/genesis.json
 
 $ b2sum heimdall/config/genesis.json
 cb980d1a9e94499200181a33860358110c9fe2901090d4415e7244e1c10a8085b6abe68ade9cb9532052b65a445cf031925d4c84f54f0c44d998a94d423208d7  heimdall/config/genesis.json
@@ -24,7 +24,7 @@ cb980d1a9e94499200181a33860358110c9fe2901090d4415e7244e1c10a8085b6abe68ade9cb953
 
 It includes a genesis time of 2020-05-30T04:28:03.177054Z. 
 
-The recommended software version is v0.2.0 of the [Heimdall]() and [Bor]() node software. See the installation instructions and the guide to joining mainnet [here]().
+The recommended software version is v0.2.2 of the [Heimdall]() and v0.2.8 of the [Bor]() node software. See the installation instructions and the guide to joining mainnet [here]().
 
 Users wishing to interact with the network should carefully review how to protect themselves and the security advisories in the recent communication provided in the docs on preparing for main net launch.
 
