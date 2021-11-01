@@ -1,0 +1,48 @@
+version: "3.3"
+
+networks:
+  devnet-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.1.0/24
+
+services:
+
+  heimdall0:
+    image: "maticnetwork/heimdall:${HEIMDALL_TAG}"
+    container_name: heimdall0
+    entrypoint: "heimdalld start"
+    networks:
+      - devnet-network
+    volumes:
+      - ./heimdall/:/root/heimdall
+    ports:
+      - "1317:1317"
+      - "26657:26657"
+      - "26656:26656"
+
+  heimdall-rest-server0:
+    image: "maticnetwork/heimdall:${HEIMDALL_TAG}"
+    container_name: heimdall-rest-server0
+    entrypoint: "heimdalld rest-server"
+    networks:
+      - devnet-network
+    volumes:
+      - ./heimdall/:/root/heimdall
+    ports:
+      - "1317:1317"
+      - "26657:26657"
+      - "26656:26656"
+    
+  bor0:
+    image: "maticnetwork/bor:${BOR_TAG}"
+    container_name: bor0
+    networks:
+      devnet-network:
+          ipv4_address: 172.20.1.100
+    volumes:
+      - ./bordata/:/root/bor
+    ports:
+      - "8545:8545"
+      - "8546:8546"
