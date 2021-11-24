@@ -14,7 +14,7 @@ DATA_DIR=$BOR_DIR/data
 
 bor --datadir $DATA_DIR \
   --port 30303 \
-  --http --http.addr '0.0.0.0' \
+  --http --http.addr '127.0.0.1' \
   --http.vhosts '*' \
   --http.corsdomain '*' \
   --http.port 8545 \
