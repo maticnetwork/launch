@@ -51,7 +51,6 @@ services:
         cd /root \
         && wget -O setup.sh ${BOR_SETUP} \
         && wget -O genesis.json ${BOR_GENESIS} \
-        && wget -O static-nodes.json ${BOR_STATIC_FILE} \
         && sh setup.sh \
         && if [ ! -f \"start.sh\" ]
         then
