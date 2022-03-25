@@ -20,9 +20,10 @@ bor --datadir $DATA_DIR \
   --miner.gastarget '20000000' \
   --txpool.nolocals \
   --txpool.accountslots 16 \
-  --txpool.globalslots 131072 \
-  --txpool.accountqueue 64 \
-  --txpool.globalqueue 131072 \
+  --txpool.globalslots 32768 \
+  --txpool.accountqueue 16 \
+  --txpool.globalqueue 32768 \
+  --txpool.pricelimit '30000000000' \
   --txpool.lifetime '1h30m0s' \
   --maxpeers 200 \
   --metrics \
