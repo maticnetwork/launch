@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+node=$1
 
-echo -e '\e[93mWhich node you are running?(validator or sentry):'
-read node
+if [[ -z $node ]]; then
+  echo -e '\e[93mWhich node you are running?(validator or sentry):'
+  read node
+fi
 
 #status
 Bor_Status="$(systemctl is-active bor.service)"
@@ -81,4 +84,5 @@ if [ "$node" = "validator" ]; then
     echo "eth_rpc_url is working fine!"
  fi
 fi
+
 
