@@ -1,0 +1,39 @@
+chain = "mumbai"
+datadir = "$DATA_DIR"
+sync-mode = "full"
+keystore-dir = "$BOR_DIR/keystore"
+
+[accounts]
+allow-insecure-unlock = true
+password-file = "$BOR_DIR/password.txt"
+unlock = ["$ADDRESS"]
+
+[jsonrpc]
+ipc-path = "$DATA_DIR/bor.ipc"
+
+[jsonrpc.http]
+enabled = true
+host = "0.0.0.0"
+vhost = ["*"]
+cors = ["*"]
+port = 8545
+api = ["eth", "net", "web3", "txpool", "bor"]
+
+[p2p]
+port = 30303
+maxpeers = 200
+
+[sealer]
+enabled = true
+gas-ceil = 20000000
+
+[telemetry]
+enabled = true
+
+[txpool]
+account-queue = 64
+account-slots = 16
+global-queue = 131072
+global-slots = 131072
+lifetime = "1h30m0s"
+no-locals = true
