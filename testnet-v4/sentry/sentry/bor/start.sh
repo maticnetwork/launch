@@ -4,7 +4,11 @@
 
 set -x #echo on
 
-BOR_DIR=${BOR_DIR:-~/.bor}
-DATA_DIR=$BOR_DIR/data
+export BOR_DIR=${BOR_DIR:-~/.bor}
+export DATA_DIR=$BOR_DIR/data
+
+# replace the enviromental variables in ./config.toml
+TEMP="$(envsubst < ./config.toml)"
+echo "$TEMP" > ./config.toml
 
 bor server -config="./config.toml"
