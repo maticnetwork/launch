@@ -1,15 +1,15 @@
 chain = "mumbai"
-datadir = "$DATA_DIR"
+# datadir = "$DATA_DIR"
 sync-mode = "full"
-keystore-dir = "$BOR_DIR/keystore"
+# keystore-dir = "$BOR_DIR/keystore"
 
 [accounts]
 allow-insecure-unlock = true
-password-file = "$BOR_DIR/password.txt"
-unlock = ["$ADDRESS"]
+# password-file = "$BOR_DIR/password.txt"
+# unlock = ["$ADDRESS"]
 
 [jsonrpc]
-ipc-path = "$DATA_DIR/bor.ipc"
+# ipc-path = "$DATA_DIR/bor.ipc"
 
 [jsonrpc.http]
 enabled = true

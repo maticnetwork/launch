@@ -1,9 +1,9 @@
 chain = "mainnet"
-datadir = "$DATA_DIR"
+# datadir = "$DATA_DIR"
 sync-mode = "full"
 
 [jsonrpc]
-ipc-path = "$DATA_DIR/bor.ipc"
+# ipc-path = "$DATA_DIR/bor.ipc"
 
 [jsonrpc.http]
 enabled = true
