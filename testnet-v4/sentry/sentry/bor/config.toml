@@ -1,0 +1,32 @@
+chain = "mumbai"
+datadir = "/var/lib/bor"
+syncmode = "full"
+
+[jsonrpc]
+ipcpath = "/var/lib/bor/bor.ipc"
+
+[jsonrpc.http]
+enabled = true
+host = "0.0.0.0"
+vhosts = ["*"]
+corsdomain = ["*"]
+port = 8545
+api = ["eth", "net", "web3", "txpool", "bor"]
+
+[p2p]
+port = 30303
+maxpeers = 200
+
+[miner]
+gasceil = 20000000
+
+[telemetry]
+metrics = true
+
+[txpool]
+accountqueue = 64
+accountslots = 16
+globalqueue = 131072
+globalslots = 131072
+lifetime = "1h30m0s"
+nolocals = true
