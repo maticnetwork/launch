@@ -27,7 +27,7 @@ nodiscover = true
 [miner]
 enabled = true
 gasceil = 20000000
-gasprice = 30000000000
+gasprice = "30000000000"
 
 [telemetry]
 metrics = true
