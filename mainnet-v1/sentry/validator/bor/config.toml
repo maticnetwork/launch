@@ -1,5 +1,5 @@
 chain = "mainnet"
-# datadir = "$DATA_DIR"
+datadir = "/var/lib/bor"
 # keystore = "$BOR_DIR/keystore"
 syncmode = "full"
 
@@ -9,7 +9,7 @@ allow-insecure-unlock = true
 # unlock = ["$ADDRESS"]
 
 [jsonrpc]
-# ipcpath = "$DATA_DIR/bor.ipc"
+ipcpath = "/var/lib/bor/bor.ipc"
 
 [jsonrpc.http]
 enabled = true

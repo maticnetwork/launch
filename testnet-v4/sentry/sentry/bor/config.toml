@@ -1,9 +1,9 @@
 chain = "mumbai"
-# datadir = "$DATA_DIR"
+datadir = "/var/lib/bor"
 syncmode = "full"
 
 [jsonrpc]
-# ipcpath = "$DATA_DIR/bor.ipc"
+ipcpath = "/var/lib/bor/bor.ipc"
 
 [jsonrpc.http]
 enabled = true
