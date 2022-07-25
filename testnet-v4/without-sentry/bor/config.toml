@@ -1,5 +1,5 @@
 chain = "mumbai"
-datadir = "/var/lib/bor"
+datadir = "/var/lib/bor/data"
 syncmode = "full"
 # keystore = "$BOR_DIR/keystore"
 
