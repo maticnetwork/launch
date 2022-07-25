@@ -1,21 +1,21 @@
 chain = "mainnet"
 # datadir = "$DATA_DIR"
-sync-mode = "full"
-# keystore-dir = "$BOR_DIR/keystore"
+syncmode = "full"
+# keystore = "$BOR_DIR/keystore"
 
 [accounts]
 allow-insecure-unlock = true
-# password-file = "$BOR_DIR/password.txt"
+# password = "$BOR_DIR/password.txt"
 # unlock = ["$ADDRESS"]
 
 [jsonrpc]
-# ipc-path = "$DATA_DIR/bor.ipc"
+# ipcpath = "$DATA_DIR/bor.ipc"
 
 [jsonrpc.http]
 enabled = true
 host = "127.0.0.1"
-vhost = ["*"]
-cors = ["*"]
+vhosts = ["*"]
+corsdomain = ["*"]
 port = 8545
 api = ["eth", "net", "web3", "txpool", "bor"]
 
@@ -23,19 +23,19 @@ api = ["eth", "net", "web3", "txpool", "bor"]
 port = 30303
 maxpeers = 200
 
-[sealer]
+[miner]
 enabled = true
-gas-ceil = 20000000
-gas-price = 30000000000
+gasceil = 20000000
+gasprice = 30000000000
 
 [telemetry]
-enabled = true
+metrics = true
 
 [txpool]
-account-queue = 16
-account-slots = 16
-global-queue = 32768
-global-slots = 32768
+accountqueue = 16
+accountslots = 16
+globalqueue = 32768
+globalslots = 32768
 lifetime = "1h30m0s"
-no-locals = true
-price-limit = 30000000000
+nolocals = true
+pricelimit = 30000000000
