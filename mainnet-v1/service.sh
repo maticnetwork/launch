@@ -14,7 +14,7 @@ EOF
 cat > bor.service <<EOF
 [Unit]
   Description=bor
-  StartLimitIntervalSec=500
+  StartLimitIntervalSec=30
   StartLimitBurst=5
 
 [Service]
@@ -36,7 +36,7 @@ EOF
 cat > heimdalld.service <<EOF
 [Unit]
   Description=heimdalld
-  StartLimitIntervalSec=500
+  StartLimitIntervalSec=30
   StartLimitBurst=5
 
 [Service]
@@ -54,7 +54,7 @@ EOF
 cat > heimdalld-rest-server.service <<EOF
 [Unit]
   Description=heimdalld-rest-server
-  StartLimitIntervalSec=500
+  StartLimitIntervalSec=30
   StartLimitBurst=5
 
 [Service]
@@ -72,8 +72,12 @@ EOF
 cat > heimdalld-bridge.service <<EOF
 [Unit]
   Description=heimdalld-bridge
+  StartLimitIntervalSec=30
+  StartLimitBurst=5
 
 [Service]
+  Restart=on-failure
+  RestartSec=5s
   WorkingDirectory=$NODE_DIR
   ExecStart=$BIN_DIR/bridge start --all
   Type=simple
