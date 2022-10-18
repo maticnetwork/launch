@@ -23,7 +23,7 @@ bor --datadir $DATA_DIR \
   --txpool.accountqueue 64 \
   --txpool.globalqueue 131072 \
   --txpool.lifetime '1h30m0s' \
-  --maxpeers 200 \
+  --maxpeers 50 \
   --metrics \
   --pprof --pprof.port 7071 --pprof.addr '0.0.0.0'
   
