@@ -36,7 +36,7 @@ bor --datadir $DATA_DIR \
   --unlock $ADDRESS \
   --password $BOR_DIR/password.txt \
   --allow-insecure-unlock \
-  --maxpeers 200 \
+  --maxpeers 50 \
   --metrics \
   --pprof --pprof.port 7071 --pprof.addr '0.0.0.0' \
   --mine
