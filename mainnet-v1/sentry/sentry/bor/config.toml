@@ -70,8 +70,7 @@ syncmode = "full"
         # prefix = ""
         # host = "localhost"
         # api = ["web3", "net"]
-        # vhosts = ["*"]
-        # corsdomain = ["*"]
+        # origins = ["*"]
     # [jsonrpc.graphql]
         # enabled = false
         # port = 0
