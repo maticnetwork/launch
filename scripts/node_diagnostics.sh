@@ -91,9 +91,15 @@ if [ "$chainId" -ne "137" ] || [ "$jaipurBlock" -ne  "23850000" ]; then
  echo -e "\e[31mBor is not init with correct Genesis."
 fi
 
+delhiBlock=$(bor attach ~/.bor/data/bor.ipc --exec admin.nodeInfo.protocols.eth.config.bor.delhiBlock) # 36499456
+
+if [ "$chainId" -ne "137" ] || [ "$delhiBlock" -ne  "36499456" ]; then
+ echo -e "\e[31mBor is not init with correct Genesis."
+fi
+
 # //check heimdall genesis
 
-localGenesisTime=$(cat ~/.heimdalld/config/genesis.json | jq ".genesis_time") 
+localGenesisTime=$(cat ~/.heimdalld/config/genesis.json | jq ".genesis_time")
 remoteGenesisTime=$(curl -s https://raw.githubusercontent.com/maticnetwork/launch/master/mainnet-v1/sentry/sentry/heimdall/config/genesis.json | jq ".genesis_time")
 
 [[ "$localGenesisTime" == "$remoteGenesisTime" ]] || echo -e "\e[31mHeimdall is not init with correct Genesis."
