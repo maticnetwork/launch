@@ -25,6 +25,7 @@ bor --datadir $DATA_DIR \
   --txpool.globalqueue 32768 \
   --txpool.pricelimit '30000000000' \
   --txpool.lifetime '1h30m0s' \
+  --gpo.ignoreprice '30000000000' \
   --maxpeers 50 \
   --metrics \
   --pprof --pprof.port 7071 --pprof.addr '0.0.0.0'
