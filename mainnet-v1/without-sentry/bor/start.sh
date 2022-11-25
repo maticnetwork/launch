@@ -23,8 +23,7 @@ bor --datadir $DATA_DIR \
   --syncmode 'full' \
   --networkid '137' \
   --miner.gasprice '30000000000' \
-  --miner.gaslimit '20000000' \
-  --miner.gastarget '20000000' \
+  --miner.gaslimit '30000000' \
   --txpool.nolocals \
   --txpool.accountslots 16 \
   --txpool.globalslots 32768 \

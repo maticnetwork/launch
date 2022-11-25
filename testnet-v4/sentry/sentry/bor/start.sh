@@ -15,8 +15,7 @@ bor --datadir $DATA_DIR \
   --http.api 'eth,net,web3,txpool,bor' \
   --syncmode 'full' \
   --networkid '80001' \
-  --miner.gaslimit '20000000' \
-  --miner.gastarget '20000000' \
+  --miner.gaslimit '30000000' \
   --txpool.nolocals \
   --txpool.accountslots 16 \
   --txpool.globalslots 131072 \
