@@ -32,6 +32,7 @@ bor --datadir $DATA_DIR \
   --txpool.globalqueue 32768 \
   --txpool.pricelimit '30000000000' \
   --txpool.lifetime '1h30m0s' \
+  --gpo.ignoreprice '30000000000' \
   --keystore $BOR_DIR/keystore \
   --unlock $ADDRESS \
   --password $BOR_DIR/password.txt \
