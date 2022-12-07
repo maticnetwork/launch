@@ -93,7 +93,7 @@ fi
 
 # //check heimdall genesis
 
-localGenesisTime=$(cat ~/.heimdalld/config/genesis.json | jq ".genesis_time") 
+localGenesisTime=$(cat ~/.heimdalld/config/genesis.json | jq ".genesis_time")
 remoteGenesisTime=$(curl -s https://raw.githubusercontent.com/maticnetwork/launch/master/mainnet-v1/sentry/sentry/heimdall/config/genesis.json | jq ".genesis_time")
 
 [[ "$localGenesisTime" == "$remoteGenesisTime" ]] || echo -e "\e[31mHeimdall is not init with correct Genesis."
