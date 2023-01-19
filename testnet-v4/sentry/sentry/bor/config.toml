@@ -2,7 +2,10 @@ chain = "mumbai"
 # identity = "Pratiks-MacBook-Pro.local"
 # log-level = "INFO"
 datadir = "/var/lib/bor/data"
+# ancient = ""
 # keystore = ""
+# "rpc.batchlimit" = 100
+# "rpc.returndatalimit" = 100000
 syncmode = "full"
 # gcmode = "full"
 # snapshot = true
@@ -78,6 +81,10 @@ syncmode = "full"
         # host = ""
         # vhosts = ["*"]
         # corsdomain = ["*"]
+    # [jsonrpc.timeouts]
+        # read = "30s"
+        # write = "30s"
+        # idle = "2m0s"
 
 # [gpo]
     # blocks = 20
@@ -113,6 +120,7 @@ syncmode = "full"
     # noprefetch = false
     # preimages = false
     # txlookuplimit = 2350000
+    # timeout = "1h0m0s"
 
 # [accounts]
     # unlock = []
