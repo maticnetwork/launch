@@ -1,0 +1,4 @@
+[
+  "<replace with enode://validator_machine_enodeID@validator_machine_ip:30303>",
+  "<replace with enode://other_public_machine_enode@sentry_machine_ip:30303>"
+]
