@@ -1,4 +1,4 @@
-This readme is for setting up full nodes for mumbai/mainnet node for matic network using docker-compose
+This readme is for setting up full nodes for mumbai/amoy/mainnet node for matic network using docker-compose
 
 Download the latest snapshot for mainnet full node. We periodically take new snapshots and will publish new links.
 ```
